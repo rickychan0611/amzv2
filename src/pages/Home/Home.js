@@ -15,12 +15,14 @@ import {
   Responsive
 } from 'semantic-ui-react'
 
-import styles from './styles'
+import styled from 'styled-components'
+import {Title, Wrapper} from './styles.js'
+import {Card} from '../../components'
 
 const Home = () => {
   return (
     <div>
-      this is home
+      <Card />
     </div>
   )
 }
