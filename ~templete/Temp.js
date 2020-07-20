@@ -1,26 +1,11 @@
 import React from 'react'
-import {
-  Container,
-  Grid,
-  Button,
-  Form,
-  Header,
-  Segment,
-  Input,
-  Rating,
-  Image,
-  Divider,
-  Icon,
-  Checkbox,
-  Responsive
-} from 'semantic-ui-react'
-import styles from './styles'
+import DIV from './Temp_Styles'
 
 const Temp = () => {
   return (
-    <div>
+    <DIV>
       
-    </div>
+    </DIV>
   )
 }
 
