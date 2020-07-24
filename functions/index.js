@@ -12,11 +12,11 @@ const cors = require("cors")({ origin: true });
 exports.addProduct = functions.https.onRequest(async (req, res) => {
   cors(req, res, async () => {
     const asin = req.query.asin;
-    const productURL = `https://www.amazon.ca/dp/` + asin  + `?th=1&psc=1`;
+    const productUrl = `https://www.amazon.ca/dp/` + asin  + `?th=1&psc=1`;
 
-    async function getHTML(productURL) {
+    async function getHTML(productUrl) {
       const data = await axios
-        .get(productURL, {
+        .get(productUrl, {
           headers: {
             "User-Agent":
               "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36",
@@ -24,6 +24,7 @@ exports.addProduct = functions.https.onRequest(async (req, res) => {
         })
         .catch(function (error) {
           console.log(error);
+          return res.json({title:"ERROR: Product not found"});
         });
       return data;
     }
@@ -53,7 +54,7 @@ exports.addProduct = functions.https.onRequest(async (req, res) => {
       };
     }
 
-    const { data: html } = await getHTML(productURL);
+    const { data: html } = await getHTML(productUrl);
     const result = await getAmazonPrice(html);
     res.json(result);
   });

@@ -19,6 +19,7 @@ export const TopBarContainer = styled.div`
   top: 0;
   background-image: linear-gradient(90deg, #ffe259, #ffa751, #ff518c);
   padding: 25px;
+  z-index: 1000
 `;
 
 export const Content = styled.div`
