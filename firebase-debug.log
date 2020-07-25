@@ -12270,3 +12270,22 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [info] i  functions: Finished "addProduct" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"Finished \"addProduct\" in ~1s"}}
 [debug] [2020-07-24T08:32:57.892Z] [worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: IDLE"}}
 [debug] [2020-07-24T08:32:57.892Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-07-25T03:07:20.967Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-07-25T03:07:20.967Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-07-25T03:07:20.967Z] Accepted request GET /amzr-b7fd2/us-central1/addProduct?asin=B075343J57 --> addProduct
+[debug] [2020-07-25T03:07:20.968Z] [worker-pool] submitWork(triggerId=addProduct) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=addProduct)"}}
+[debug] [2020-07-25T03:07:20.968Z] [worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: Assigning socketPath: \\?\pipe\F:\amz-b4a\buyer\functions\11972 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: Assigning socketPath: \\\\?\\pipe\\F:\\amz-b4a\\buyer\\functions\\11972"}}
+[debug] [2020-07-25T03:07:20.968Z] [worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: BUSY"}}
+[debug] [2020-07-25T03:07:20.975Z] [runtime-status] [11972] Trigger "addProduct" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"[runtime-status] [11972] Trigger \"addProduct\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "addProduct" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"Beginning execution of \"addProduct\""}}
+[debug] [2020-07-25T03:07:20.976Z] [runtime-status] [11972] triggerDefinition {"httpsTrigger":{},"name":"addProduct","entryPoint":"addProduct"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"[runtime-status] [11972] triggerDefinition {\"httpsTrigger\":{},\"name\":\"addProduct\",\"entryPoint\":\"addProduct\"}"}}
+[debug] [2020-07-25T03:07:20.976Z] [runtime-status] [11972] Running addProduct in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"[runtime-status] [11972] Running addProduct in mode HTTPS"}}
+[debug] [2020-07-25T03:07:20.983Z] [runtime-status] [11972] Attempting to listen to socketPath: \\?\pipe\F:\amz-b4a\buyer\functions\11972 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"[runtime-status] [11972] Attempting to listen to socketPath: \\\\?\\pipe\\F:\\amz-b4a\\buyer\\functions\\11972"}}
+[debug] [2020-07-25T03:07:20.985Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-07-25T03:07:20.990Z] [runtime-status] [11972] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"[runtime-status] [11972] Ephemeral server handling GET request"}}
+[debug] [2020-07-25T03:07:20.998Z] [runtime-status] [11972] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"[runtime-status] [11972] Ephemeral server survived."}}
+[info] >  39.99 {"user":39.99,"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"\u001b[90m> \u001b[39m 39.99"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"\u001b[90m> \u001b[39m "}}
+[info] i  functions: Finished "addProduct" in ~2s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"Finished \"addProduct\" in ~2s"}}
+[debug] [2020-07-25T03:07:23.232Z] [worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: IDLE"}}
+[debug] [2020-07-25T03:07:23.232Z] [work-queue] {"queueLength":0,"workRunningCount":0}

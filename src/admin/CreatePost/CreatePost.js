@@ -3,7 +3,7 @@ import axios from "axios";
 import db from "../../firestore";
 import dayjs from "dayjs";
 import ClipboardJS from "clipboard";
-
+import save from "../exp"
 import "./style.css";
 
 import {
@@ -70,7 +70,8 @@ const CreatePost = () => {
         id: newProduct.id,
         createAt: new Date(),
         productUrl, 
-        amzUrl
+        amzUrl,
+        active: true
       })
       .then((doc) => {
         setLoading(false);
@@ -124,8 +125,10 @@ const CreatePost = () => {
     );
   };
 
+  
   return (
     <>
+    <button onClick={()=>save()}>SAVE</button>
       <h2>产品登记</h2>
       <Grid>
         <Grid.Row columns={2}>
