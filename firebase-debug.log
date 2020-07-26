@@ -12289,3 +12289,28 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [info] i  functions: Finished "addProduct" in ~2s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"addProduct"},"message":"Finished \"addProduct\" in ~2s"}}
 [debug] [2020-07-25T03:07:23.232Z] [worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: IDLE"}}
 [debug] [2020-07-25T03:07:23.232Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[warn] !  ui: Fatal error occurred: 
+   Emulator UI has exited with code: 1073807364, 
+   stopping all running emulators {"metadata":{"emulator":{"name":"ui"},"message":"Fatal error occurred: \n   Emulator UI has exited with code: 1073807364, \n   stopping all running emulators"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  firestore: Stopping Firestore Emulator {"metadata":{"emulator":{"name":"firestore"},"message":"Stopping Firestore Emulator"}}
+[info] i  database: Stopping Database Emulator {"metadata":{"emulator":{"name":"database"},"message":"Stopping Database Emulator"}}
+[info] i  hosting: Stopping Hosting Emulator {"metadata":{"emulator":{"name":"hosting"},"message":"Stopping Hosting Emulator"}}
+[info] i  pubsub: Stopping Pub/Sub Emulator {"metadata":{"emulator":{"name":"pubsub"},"message":"Stopping Pub/Sub Emulator"}}
+[debug] [2020-07-26T09:24:01.106Z] [worker-~diagnostic~-dd38a1e9-5c73-4002-bc48-d79bd82eca1e]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-dd38a1e9-5c73-4002-bc48-d79bd82eca1e]: exited"}}
+[debug] [2020-07-26T09:24:01.106Z] [worker-~diagnostic~-dd38a1e9-5c73-4002-bc48-d79bd82eca1e]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-dd38a1e9-5c73-4002-bc48-d79bd82eca1e]: FINISHED"}}
+[debug] [2020-07-26T09:24:01.106Z] [worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: exited"}}
+[debug] [2020-07-26T09:24:01.106Z] [worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-addProduct-75da0579-92d9-46f8-a3f5-071529f38025]: FINISHED"}}
+[warn] !  pubsub: Fatal error occurred: 
+   Pub/Sub Emulator has exited with code: 1, 
+   stopping all running emulators {"metadata":{"emulator":{"name":"pubsub"},"message":"Fatal error occurred: \n   Pub/Sub Emulator has exited with code: 1, \n   stopping all running emulators"}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  firestore: Stopping Firestore Emulator {"metadata":{"emulator":{"name":"firestore"},"message":"Stopping Firestore Emulator"}}
+[info] i  database: Stopping Database Emulator {"metadata":{"emulator":{"name":"database"},"message":"Stopping Database Emulator"}}
+[info] i  pubsub: Stopping Pub/Sub Emulator {"metadata":{"emulator":{"name":"pubsub"},"message":"Stopping Pub/Sub Emulator"}}
+[warn] !  Database Emulator has exited upon receiving signal: SIGINT 
+[warn] !  Firestore Emulator has exited upon receiving signal: SIGINT 
+[debug] [2020-07-26T09:24:01.293Z] Received signal SIGHUP 1
