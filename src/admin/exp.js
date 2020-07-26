@@ -11,7 +11,7 @@ async function save() {
     product = data.products[item];
     let newObj = {};
     newObj = {
-      createAt: new Date(),
+      createAt: product.createDate,
       coupon: product.coupon,
       dailyQty: product.dailyQuota,
       dailyCounter: product.dailyQuotaCounter,

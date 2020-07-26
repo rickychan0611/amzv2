@@ -10,6 +10,7 @@ export const Body = styled.div`
 export const View = styled.div`
   /* position: relative; */
   width: 450px;
+  min-height: 100vh;
   max-width: 500px;
   background-color: white;
 `;

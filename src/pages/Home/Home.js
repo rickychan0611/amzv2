@@ -1,19 +1,12 @@
-import React from 'react'
-import {Card} from '../../components'
-import {CardsContainer} from './HomeStyles.js'
+import React, { useContext } from "react";
+import { AllProductsCards} from "../../components";
 
 const Home = () => {
   return (
-   <>
-    <CardsContainer>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </CardsContainer>
-  </>
-  )
-}
+    <>
+      <AllProductsCards />
+    </>
+  );
+};
 
-export default Home
+export default Home;

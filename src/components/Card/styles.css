@@ -1,0 +1,32 @@
+.card-container {
+  flex-basis: 48%;
+  height: 250px;
+  min-width: 130px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+  padding-top: 10px;
+}
+.card-img {
+  object-fit: scale-down;
+  width: 40vw;
+  max-width: 179px;
+  min-width: 140px;
+  height: 160px;
+}
+.price {
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #858585;
+  text-align: left;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  
+}
