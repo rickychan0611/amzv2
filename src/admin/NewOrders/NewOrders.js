@@ -24,14 +24,25 @@ const NewOrders = () => {
         return;
       });
     
+      //get an array of seller's name
       const sellers = await [...new Set(tempSellerArr)]
       
+      let newArr = []
       sellers.map((seller) => {
-        tempProductArr.filter(item => {
-          item.sellerWechat = seller
+        let obj = {}
+        obj.name = seller
+        const items = tempProductArr.filter(item => {
+           if (item.sellerWechat == seller) {
+             return true
+           }
+           else {
+             return false
+           }
         })
+        obj.items = items
+        newArr.push(obj)
       })
-      
+      console.log(newArr)
   };
 
   return (
