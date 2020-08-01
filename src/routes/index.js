@@ -7,8 +7,11 @@ import { Body, View, TopBarContainer, Content } from './styles.js'
 
 import Home from "../pages/Home"
 import Item from "../pages/Item"
+import User from "../pages/User"
+import SignIn from "../pages/SignIn"
 import CreatePost from '../admin/CreatePost';
 import NewOrders from '../admin/NewOrders';
+import UserQuery from '../admin/UserQuery';
 
 export default (props) => {
   return (
@@ -25,7 +28,10 @@ export default (props) => {
             <Route path="/" exact component={Home} />
             <Route path="/myadmin/create-post" exact component={CreatePost} />
             <Route path="/myadmin/new-orders" exact component={NewOrders} />
+            <Route path="/myadmin/user-query" exact component={UserQuery} />
             <Route path="/item/:id/:keywords" component={Item} />
+            <Route path="/:state/user/:facebookName/:id" component={User} />
+            <Route path="/signin" exact component={SignIn} />
           </Switch>
           
         </Content>
