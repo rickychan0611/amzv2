@@ -9,6 +9,12 @@ const TopBar = () => {
   return (
     <>
       <Title>
+        <div style={{
+          marginLeft: 5
+        }}>
+          <Icon name='bars' size="large" style={{ color: '#707070' }}
+            onClick={() => { setOpenSideBar(!openSideBar) }} />
+            </div>
         amz-club
       </Title>
     </>
