@@ -12,21 +12,19 @@ const Item = () => {
   const [item, setItem] = useState(null);
   let deal = 0;
   let discount = 0;
-  
+
   const loadItem = () => {
-    setItem(
-      products.find(item => item.id == id)
-      )
-  }
+    setItem(products.find((item) => item.id == id));
+  };
 
   useEffect(() => {
-    loadItem()
-  },[id, loading])
+    loadItem();
+  }, [id, loading]);
 
   return (
     <>
       {!item ? (
-        <Loader />
+          <Loader />
       ) : (
         <>
           <Container>
@@ -56,8 +54,6 @@ const Item = () => {
               Today's Quota is Full. Reserve Yours Now
             </Button>
             <Title>The item will be available on:</Title>
-
-
           </Container>
           <br />
           <br />
@@ -65,7 +61,7 @@ const Item = () => {
           <br />
 
           <Title>Other Products</Title>
-          <AllProductsCards/>
+          <AllProductsCards />
         </>
       )}
     </>

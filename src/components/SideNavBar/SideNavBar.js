@@ -76,7 +76,7 @@ const SideNavBar = ({ setNavDim }) => {
               <Icon name="arrow circle left" size="large" color="grey" />
             </Menu.Item>
           </Menu.Menu>
-          <Menu.Item name="/posts" onClick={handleClick}>Browse Meals</Menu.Item>
+          <Menu.Item name="/" onClick={handleClick}>Home</Menu.Item>
           <Menu.Item name="/messages" onClick={handleClick}>Messages</Menu.Item>
           <Menu.Item name="/notifications" onClick={handleClick}>Notifications</Menu.Item>
           <Menu.Item name="/my-orders" onClick={handleClick}>My Orders</Menu.Item>

@@ -5,6 +5,7 @@ export const Container = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   flex-flow: column wrap;
+
 `;
 export const Image = styled.img`
   max-width: 300px;

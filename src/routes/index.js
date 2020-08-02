@@ -29,7 +29,7 @@ export default (props) => {
         <Dimmer.Dimmable dimmed={navDim} blurring>
           <Dimmer active={navDim} inverted />
           <div style={{
-            paddingTop: 72,
+            paddingTop: 10,
             postion: "relative",
             height: '100%',
             // backgroundColor: 'yellow'
