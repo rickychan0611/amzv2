@@ -55,42 +55,18 @@ const UserContextProvider = ({ children }) => {
     if (userData) {
       setUser(userData)
       setLoading(false)
-      console.log('user signed in')
-            
-      usersDB.where('uid', '==', userData.uid).get()
+      console.log('user signed in: ', userData)
+
+      db.collection("users")
+      .where('uid', '==', userData.uid).get()
         .then(snapshot => {
           if (snapshot.empty) {
             console.log('user not found');
-
-            // let newUserRef = usersDB.doc(userData.uid)
-            // set user
-          //   newUserRef.set(
-          //     {
-          //       id: userData.uid,
-          //       uid: userData.uid,
-          //       displayName: displayName,
-          //       // photoURL: photoURL,
-          //       email: userData.email,
-          //       // phoneNumber: userData.photoNumber,
-          //       // provideId: userData.provideId,
-          //       emailVerified: userData.emailVerified
-          //     }
-          //   ).then(function (doc) {
-          //     console.log('callBack@@@@: => ' + JSON.stringify(doc))
-
-          //     setUser(doc.data())
-          //     setLoading(false)
-          //     // history.push('/posts')
-          //     console.log("Document written with ID: ", doc.id);
-          //   })
-          //     .catch(function (error) {
-          //       console.error("Error adding document: ", error);
-          //     })
-          //   // return
           };
           //not empty
           snapshot.forEach(doc => {
             // console.log(doc.id, '=>', JSON.stringify(doc.data()))
+            console.log(doc.data())
             setUser(doc.data())
             setLoading(false)
           });

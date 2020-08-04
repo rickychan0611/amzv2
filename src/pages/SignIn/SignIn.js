@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { auth } from "../../firestore";
 import {
@@ -20,16 +20,21 @@ const SignIn = () => {
   console.log("singin loaded");
   const history = useHistory();
   const [state, setState] = useState({});
-  const { AuthState } = useContext(UserContext);
+  const { AuthState, user } = useContext(UserContext);
 
   // Configure FirebaseUI.
   const uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function (authResult, redirectUrl) {
         const userRef = db.collection("users").doc(authResult.user.uid);
-        history.push("/posts");
         userRef.get().then((snapShot) => {
+          
+          //if user exists, check if it is a registered account. 
           if (snapShot.exists) {
+            console.log('snapShot', snapShot)
+            if ( !snapShot.registered ) {
+              history.push("./register")
+            }
             return true;
           } else {
             userRef.set({
@@ -48,7 +53,7 @@ const SignIn = () => {
     // Popup signin flow rather than redirect flow.
     signInFlow: "popup",
     // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-    signInSuccessUrl: "/posts",
+    signInSuccessUrl: "/",
     // We will display Google and Facebook as auth providers.
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -74,15 +79,23 @@ const SignIn = () => {
         alert(errorMessage);
       });
   };
+
+  useEffect(()=>{
+    console.log(user)
+    if (user !== "not signed in"){
+      history.push("/")
+    }
+  },[user])
+
   return (
-    <>
-      <Segment basic style={{ height: "90vh" }}>
+      <div style={{}}>
+      <Segment basic style={{ height: "100vh", width: "100vw", maxWidth:"600px", minWidth:"400px" }}>
         <Grid
           textAlign="center"
           style={{ height: "calc(100vh - 6rem)" }}
           verticalAlign="middle"
         >
-          <Grid.Column style={{ maxWidth: 400 }}>
+          <Grid.Column >
             <Header as="h2" color="grey" textAlign="center">
               <Image src="https://img.icons8.com/cotton/64/000000/like--v3.png" />
               Log-in to your account
@@ -114,12 +127,12 @@ const SignIn = () => {
               </Segment>
             </Form>
             New to us? <Link to="/register">Sign Up</Link>
-            {/* <Divider horizontal>Or</Divider> */}
-            {/* <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} /> */}
+            <Divider horizontal>Or</Divider>
+            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
           </Grid.Column>
         </Grid>
       </Segment>
-    </>
+      </ div>
   );
 };
 

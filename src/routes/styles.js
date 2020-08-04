@@ -34,4 +34,6 @@ export const Content = styled.div`
   padding: 20px;
   margin-top: 80px;
   max-width: 800px;
+  min-width: 400px;
+  min-height: calc(100vh - 45px)
 `

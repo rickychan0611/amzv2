@@ -11,6 +11,7 @@ const User = () => {
   const [thisOrders, setThisOrders] = useState([]);
 
   useEffect(() => {
+    console.log("uyser", user)
     let tempArr = []
     if (id) {
       db.collection("users")
@@ -32,7 +33,7 @@ const User = () => {
   }, []);
 
   return (
-    <>
+    <div >
       {thisUser ? (
         <>
           <div>name: {thisUser.facebookName}</div>
@@ -59,7 +60,7 @@ const User = () => {
             : null}
         </>
       ) : null}
-    </>
+    </div>
   );
 };
 

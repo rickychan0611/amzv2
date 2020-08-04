@@ -9,6 +9,7 @@ import { Grid, Dimmer } from 'semantic-ui-react';
 import Home from "../pages/Home"
 import Item from "../pages/Item"
 import User from "../pages/User"
+import Register from "../pages/Register"
 import SignIn from "../pages/SignIn"
 import CreatePost from '../admin/CreatePost';
 import NewOrders from '../admin/NewOrders';
@@ -44,7 +45,9 @@ export default (props) => {
                 <Route path="/myadmin/user-query" exact component={UserQuery} />
                 <Route path="/item/:id/:keywords" component={Item} />
                 <Route path="/:state/user/:facebookName/:id" component={User} />
-                <Route path="/signin" exact component={SignIn} />
+                <Route path="/profile" component={User} />
+                <Route path="/register" component={Register} />
+                <Route path="/sign-in" exact component={SignIn} />
               </Switch>
 
             </Content>

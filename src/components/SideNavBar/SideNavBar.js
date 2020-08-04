@@ -19,16 +19,16 @@ const SideNavBar = ({ setNavDim }) => {
 
   const handleClick = (e, { name }) => {
     if (
-      name == "/create-post" ||
-      name == "/messages" ||
-      name == "/notifications" ||
-      name == "/messages" ||
-      name == "/my-orders" ||
-      name == "/profile" ||
-      name == "/my-posts" ||
-      name == "/my-sales"
+      name === "/create-post" ||
+      name === "/messages" ||
+      name === "/notifications" ||
+      name === "/messages" ||
+      name === "/my-orders" ||
+      name === "/profile" ||
+      name === "/my-posts" ||
+      name === "/my-sales"
     ) {
-      if (user == "not signed in") {
+      if (user === "not signed in") {
         // alert("please sign in")
         setOpenSignInModal(true)
       }
@@ -57,7 +57,7 @@ const SideNavBar = ({ setNavDim }) => {
         animation='overlay'
         icon='labeled'
         // inverted
-        vertical
+        vertical="true"
         visible={openSideBar}
         onVisible={() => setNavDim(true)}
         onHide={() => {
@@ -70,30 +70,23 @@ const SideNavBar = ({ setNavDim }) => {
           style={{
             paddingTop: 90, height: "100%", width: '99%'
           }}>
-          <Menu.Menu position="rigth">
+          <Menu.Menu position="right">
             <Menu.Item onClick={() => { setOpenSideBar(false) }}>
               &nbsp;
               <Icon name="arrow circle left" size="large" color="grey" />
             </Menu.Item>
           </Menu.Menu>
           <Menu.Item name="/" onClick={handleClick}>Home</Menu.Item>
-          <Menu.Item name="/messages" onClick={handleClick}>Messages</Menu.Item>
-          <Menu.Item name="/notifications" onClick={handleClick}>Notifications</Menu.Item>
           <Menu.Item name="/my-orders" onClick={handleClick}>My Orders</Menu.Item>
           <Menu.Item name="/profile" onClick={handleClick}>My Profile</Menu.Item>
           <Divider />
-          <Menu.Item name="/create-post" onClick={handleClick}>Create a Meal</Menu.Item>
-          <Menu.Item name="/my-posts" onClick={handleClick}>My Posts</Menu.Item>
-          <Menu.Item name="/my-sales" onClick={handleClick}>My Sales</Menu.Item>
 
-          {user == 'not signed in' ?
+          {user === 'not signed in' ?
             <>
-              <Divider />
               <Menu.Item name="/sign-in" onClick={handleClick}>Sign In</Menu.Item>
               <Menu.Item name="/register" onClick={handleClick}>Register</Menu.Item>
             </> :
             <>
-              <Divider />
               <Menu.Item name="/log-out" onClick={() => {
                 setOpenSideBar(false)
                 setConfirm(true)

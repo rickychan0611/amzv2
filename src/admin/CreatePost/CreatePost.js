@@ -3,7 +3,7 @@ import axios from "axios";
 import db from "../../firestore";
 import dayjs from "dayjs";
 import ClipboardJS from "clipboard";
-import save from "../exp"
+import save from "../exp";
 import "./style.css";
 
 import {
@@ -30,10 +30,17 @@ const CreatePost = () => {
   const [asin, setAsin] = useState("");
   const [loading, setLoading] = useState(false);
 
+  let amzUrl =
+      `https://www.amazon.ca/dp/` +
+      asin +
+      `?th=1&psc=1&keywords=` +
+      productData.keywords.replace(/ /g, "%20");
+
   async function getProductData() {
     //cloud function address
     const productUrl =
       `http://localhost:5001/amzr-b7fd2/us-central1/addProduct?asin=` + asin;
+
     const result = await axios.get(productUrl, {}).catch(function (error) {
       console.log(error);
     });
@@ -59,8 +66,8 @@ const CreatePost = () => {
       `?th=1&psc=1&keywords=` +
       productData.keywords.replace(/ /g, "%20");
 
-    const amzUrl = `https://www.amz-club.com/item/
-    ${productData.keywords.replace(/ /g, "%20")}/{asin}`
+    // const amzUrl = `https://www.amz-club.com/item/
+    // ${productData.keywords.replace(/ /g, "%20")}/{asin}`;
 
     setLoading(true);
     const newProduct = db.collection("products").doc();
@@ -69,9 +76,9 @@ const CreatePost = () => {
         ...productData,
         id: newProduct.id,
         createAt: new Date(),
-        productUrl, 
+        productUrl,
         amzUrl,
-        active: true
+        active: true,
       })
       .then((doc) => {
         setLoading(false);
@@ -102,9 +109,14 @@ const CreatePost = () => {
                 </>
               ) : (
                 <>
-                <img src={productData.pic} width="250px" />
-              <div id="pic" style={{fontSize: "1px", margin:0, color: "white"}}>{productData.pic}</div>
-              </>
+                  <img src={productData.pic} width="250px" />
+                  <div
+                    id="pic"
+                    style={{ fontSize: "1px", margin: 0, color: "white" }}
+                  >
+                    {productData.pic}
+                  </div>
+                </>
               )}
             </Grid.Column>
             <Grid.Column width={10}>
@@ -125,10 +137,9 @@ const CreatePost = () => {
     );
   };
 
-  
   return (
     <>
-    <button onClick={()=>save()}>SAVE</button>
+      <button onClick={() => save()}>SAVE</button>
       <h2>产品登记</h2>
       <Grid>
         <Grid.Row columns={2}>
@@ -229,18 +240,10 @@ const CreatePost = () => {
       </Grid>
       <h3>
         facebook post{" "}
-        <Button
-          className="btn"
-          data-clipboard-target="#post"
-          size="mini"
-        >
+        <Button className="btn" data-clipboard-target="#post" size="mini">
           Copy
         </Button>
-        <Button
-          className="btn"
-          data-clipboard-target="#pic"
-          size="mini"
-        >
+        <Button className="btn" data-clipboard-target="#pic" size="mini">
           Copy pic
         </Button>
       </h3>
@@ -250,7 +253,7 @@ const CreatePost = () => {
           {productData.totalQty} quotas, {productData.dailyQty} per day. pls
           comment interested, then you can go ahead and get it thru amz-club.com
         </p>
-        <h4>{productData.title}</h4>
+        <div style={{fontWeight: "bold", fontSize: "16px"}}>{productData.title}</div>
         Soldy by: {productData.soldBy}
         <br />
         <br />
@@ -262,8 +265,11 @@ const CreatePost = () => {
         <br />
         <br />
         https://www.amz-club.com/item/
-        {productData.keywords.replace(/ /g, "%20")}/{asin}
+        {productData.keywords.replace(/ /g, "%20")}
+        <br />
+        <br />
       </div>
+        <a href={amzUrl} target="amz">{amzUrl}</a>
       <Divider />
       <Button fluid onClick={submitProduct}>
         Submit
