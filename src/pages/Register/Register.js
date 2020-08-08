@@ -8,6 +8,7 @@ import Step6 from "./Step6";
 import Step7 from "./Step7";
 import Step8 from "./Step8";
 import Step9 from "./Step9";
+import Warning from "./Warning";
 import {
   Button,
   Form,
@@ -17,6 +18,7 @@ import {
   Message,
   Segment,
   Icon,
+  Modal,
 } from "semantic-ui-react";
 
 import firebase from "firebase";
@@ -30,18 +32,29 @@ const Register = () => {
   const { user, loading } = useContext(UserContext);
   const [state, setState] = useState({});
   const [step, setStep] = useState("1");
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState({header:"", content: ""});
 
-  const StepRouter = 
-    step == "1" ? Step1 : 
-    step == "2" ? Step2 : 
-    step == "3" ? Step3 : 
-    step == "4" ? Step4 : 
-    step == "5" ? Step5 : 
-    step == "6" ? Step6 : 
-    step == "7" ? Step7 : 
-    step == "8" ? Step8 : 
-    step == "9" ? Step9 : 
-    null 
+  const StepRouter =
+    step == "1"
+      ? Step4
+      : step == "2"
+      ? Step1
+      : step == "3"
+      ? Step2
+      : step == "4"
+      ? Step3
+      : step == "5"
+      ? Step5
+      : step == "6"
+      ? Step6
+      : step == "7"
+      ? Step7
+      : step == "8"
+      ? Step8
+      : step == "9"
+      ? Step9
+      : null;
 
   const handleChange = (e) => {
     // console.log (e.target.value)
@@ -62,7 +75,16 @@ const Register = () => {
           we communicate via facebook.
           <br />
           <br />
-            <StepRouter state={state} setStep={setStep} handleChange={handleChange} />
+
+          <StepRouter
+            state={state}
+            setStep={setStep}
+            handleChange={handleChange}
+            setOpen={setOpen}
+            setMessage={setMessage}
+          />
+          <Warning setOpen={setOpen} open={open} message={message}/>
+          
           <br />
           {JSON.stringify(state)}
         </div>

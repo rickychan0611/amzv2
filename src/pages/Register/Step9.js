@@ -4,7 +4,7 @@ import { Button, Form } from "semantic-ui-react";
 import styles from "./styles";
 import { UserContext } from "../../context/UserContext";
 
-const Step9 = ({ state, setStep, handleChange }) => {
+const Step9 = ({ setOpen, setStep, setMessage }) => {
   return (
     <>
       <h2>step 9:</h2>
@@ -15,7 +15,7 @@ const Step9 = ({ state, setStep, handleChange }) => {
         <br />
         <Button
           onClick={() => {
-            setStep("6");
+            setStep("8");
           }}
         >
           Back
@@ -23,17 +23,20 @@ const Step9 = ({ state, setStep, handleChange }) => {
 
         <Button
           onClick={() => {
-            setStep("8");
+            setStep("9");
           }}
         >
           I agree
         </Button>
 
         <Button
-          onClick={() => {
-            setStep("1");
-          }}
-        >
+           onClick={() => {
+            setOpen(true)
+            setMessage({
+              header: "Registration Not Successful",
+              content: "Sorry, you must agree to continue.",
+            })
+          }}>
           I disagree
         </Button>
       </Form>
