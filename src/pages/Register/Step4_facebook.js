@@ -4,7 +4,7 @@ import { Button, Form } from "semantic-ui-react";
 import styles from "./styles";
 import { UserContext } from "../../context/UserContext";
 
-const Step1 = ( {state, setStep, handleChange}) => {
+const Step4 = ( {state, setStep, handleChange}) => {
 
    return (
     <>
@@ -46,4 +46,4 @@ const Step1 = ( {state, setStep, handleChange}) => {
   );
 };
 
-export default Step1;
+export default Step4;

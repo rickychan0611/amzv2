@@ -4,27 +4,24 @@ import { Button, Form, Modal, Header, Image } from "semantic-ui-react";
 import styles from "./styles";
 import { UserContext } from "../../context/UserContext";
 
-const Step4 = ({ setStep, setOpen, setMessage }) => {
+const Step1 = ({ setStep, setOpen, setMessage }) => {
   return (
     <>
-      <h2>step 4:</h2>
+      <div style={styles.content}>
+        Please follow the steps to finish your registration. Please provide valid information. Any error may delay or terminate your reimbursements.
+            </div>
+      <br />
+      <h2>Step 1</h2>
       <Form>
-        <div style={{ fontWeight: "bold" }}>
-          Is your Amazon account more than six months old and you have spent
-          over $50 on Amazon in the past 12 months?{" "}
+        <div style={styles.content}>
+          Is your Amazon account more than six months old? Have you spent
+          over $50 on Amazon in the past 12 months?
         </div>
+        <br />
         <br />
         <Button
           onClick={() => {
-            setStep("3");
-          }}
-        >
-          Back
-        </Button>
-
-        <Button
-          onClick={() => {
-            setStep("5");
+            setStep("2");
           }}
         >
           YES
@@ -46,4 +43,4 @@ const Step4 = ({ setStep, setOpen, setMessage }) => {
   );
 };
 
-export default Step4;
+export default Step1;

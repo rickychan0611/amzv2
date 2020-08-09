@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const LoaderContainer = styled.div`
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  max-width: 600px;
   min-width: 400px;
   height: 100vh;
   margin-top: -70px;
