@@ -1,29 +1,24 @@
 import React, { useContext, useState } from "react";
-import { Button, Form, Confirm } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
+import {Reg_BackButton} from "../../components"
 
 import styles from "./styles";
 import { UserContext } from "../../context/UserContext";
 
-const Step5 = ({ setOpen, setStep, setMessage }) => {
+const AskNoReturn = ({ step, setOpen, setStep, setMessage }) => {
   return (
     <>
-      <h2>step 5:</h2>
+      <h2>Step 9:</h2>
       <Form>
         <div style={{ fontWeight: "bold" }}>
-          We do not cover any shipping fee. Amazon offers free shipping when your order is more than $35. 
-         </div>
+          Once your have received your reimbursement, Amazon will not accept your return or exchange of the product. If the product has any problem, please contact your admin directly. 
+        </div>
         <br />
-        <Button
-          onClick={() => {
-            setStep("4");
-          }}
-        >
-          Back
-        </Button>
+        <Reg_BackButton props={{step, setStep}}/>
 
         <Button
           onClick={() => {
-            setStep("6");
+            setStep(step + 1);
           }}
         >
           I agree
@@ -36,8 +31,7 @@ const Step5 = ({ setOpen, setStep, setMessage }) => {
               header: "Registration Not Successful",
               content: "Sorry, you must agree to continue.",
             })
-          }}
-        >
+          }}>
           I disagree
         </Button>
       </Form>
@@ -45,4 +39,4 @@ const Step5 = ({ setOpen, setStep, setMessage }) => {
   );
 };
 
-export default Step5;
+export default AskNoReturn;

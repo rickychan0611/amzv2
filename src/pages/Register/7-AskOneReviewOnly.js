@@ -1,29 +1,26 @@
 import React, { useContext, useState } from "react";
 import { Button, Form } from "semantic-ui-react";
+import {Reg_BackButton} from "../../components"
 
 import styles from "./styles";
 import { UserContext } from "../../context/UserContext";
 
-const Step6 = ({ setOpen, setStep, setMessage }) => {
+const AskOneReviewOnly = ({ step, setOpen, setStep, setMessage }) => {
   return (
     <>
-      <h2>step 6:</h2>
+      <h2>Step 7:</h2>
       <Form>
         <div style={{ fontWeight: "bold" }}>
-        To be eligable to get the reimbursement after writing a product review, you MUST give FIVE STARS for your reviews. Simply write a few sentences and upload some pictures of the product.
-          </div>
+          If you are getting multiple items, please don't review more than one
+          item at the same time. You will need to wait for Amazon's approval for
+          a review before submitting another review.
+        </div>
         <br />
-        <Button
-          onClick={() => {
-            setStep("5");
-          }}
-        >
-          Back
-        </Button>
+        <Reg_BackButton props={{step, setStep}}/>
 
         <Button
           onClick={() => {
-            setStep("7");
+            setStep(step + 1);
           }}
         >
           I agree
@@ -44,4 +41,4 @@ const Step6 = ({ setOpen, setStep, setMessage }) => {
   );
 };
 
-export default Step6;
+export default AskOneReviewOnly;

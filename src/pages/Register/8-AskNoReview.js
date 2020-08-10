@@ -1,29 +1,24 @@
 import React, { useContext, useState } from "react";
 import { Button, Form } from "semantic-ui-react";
+import {Reg_BackButton} from "../../components"
 
 import styles from "./styles";
 import { UserContext } from "../../context/UserContext";
 
-const Step9 = ({ setOpen, setStep, setMessage }) => {
+const AskNoReview = ({ step, setOpen, setStep, setMessage }) => {
   return (
     <>
-      <h2>step 9:</h2>
+      <h2>Step 8:</h2>
       <Form>
         <div style={{ fontWeight: "bold" }}>
-          Once your have received your reimbursement, Amazon will not accept your return or exchange of the product. If the product has any problem, please contact your admin directly. 
+          For any reason that your review can not be published on Amazon's website. You may have the option to accept 50% off discount by leaving a seller feedback instead or return the product to amazon to get your full refund. 
         </div>
         <br />
-        <Button
-          onClick={() => {
-            setStep("8");
-          }}
-        >
-          Back
-        </Button>
+        <Reg_BackButton props={{step, setStep}}/>
 
         <Button
           onClick={() => {
-            setStep("9");
+            setStep(step + 1);
           }}
         >
           I agree
@@ -44,4 +39,4 @@ const Step9 = ({ setOpen, setStep, setMessage }) => {
   );
 };
 
-export default Step9;
+export default AskNoReview;

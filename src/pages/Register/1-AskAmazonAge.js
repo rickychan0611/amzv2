@@ -4,14 +4,14 @@ import { Button, Form, Modal, Header, Image } from "semantic-ui-react";
 import styles from "./styles";
 import { UserContext } from "../../context/UserContext";
 
-const Step1 = ({ setStep, setOpen, setMessage }) => {
+const AskAmazonAge = ({ step, setStep, setOpen, setMessage }) => {
   return (
     <>
       <div style={styles.content}>
-        Please follow the steps to finish your registration. Please provide valid information. Any error may delay or terminate your reimbursements.
+        Please spend a few mintues and follow the steps to finish your registration. Make sure your information is valid. Any error may delay or terminate your reimbursements.
             </div>
       <br />
-      <h2>Step 1</h2>
+      <h2>Step 1 of 9:</h2>
       <Form>
         <div style={styles.content}>
           Is your Amazon account more than six months old? Have you spent
@@ -21,7 +21,7 @@ const Step1 = ({ setStep, setOpen, setMessage }) => {
         <br />
         <Button
           onClick={() => {
-            setStep("2");
+            setStep(step + 1);
           }}
         >
           YES
@@ -43,4 +43,4 @@ const Step1 = ({ setStep, setOpen, setMessage }) => {
   );
 };
 
-export default Step1;
+export default AskAmazonAge;

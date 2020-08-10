@@ -1,26 +1,19 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form } from "semantic-ui-react";
-
+import { Reg_BackButton, Reg_NextButton } from "../../components";
 import styles from "./styles";
 import { UserContext } from "../../context/UserContext";
 
-const Step2 = ({ state, setStep, handleChange }) => {
-  const [disabled, setDisabled] = useState(true)
-  useEffect(()=>{
-    if (state.amzProfile){
-    setDisabled(false)
-  }
-  else {
-    setDisabled(true)
-  }
-  },[state.amzProfile])
+const GetAmazonUrl = ({ state, step, setStep, handleChange }) => {
+  const [disabled, setDisabled] = useState(true);
+
   return (
     <>
-      <h2>Step 2</h2>
+      <h2>Step 2:</h2>
       <Form>
         <div style={styles.content}>
           Please provide your Amazon's profile URL
-          </div>
+        </div>
         <br />
         Click{" "}
         <a href="https://www.amazon.ca/profile" target="_blank">
@@ -39,29 +32,21 @@ const Step2 = ({ state, setStep, handleChange }) => {
             href="https://www.tauricase.com/pages/how-to-get-your-amazon-profile-link"
             target="_blank"
           >
-            How to get my Amazon profile link?
+            HELP! How to get my Amazon profile link?
           </a>
         </div>
-       
         <br />
-        <Button
-          onClick={() => {
-            setStep("1");
-          }}
-        >
-          Back
-        </Button>
-        <Button
-        disabled={disabled}
-          onClick={() => {
-            setStep("3");
-          }}
+        <Reg_BackButton props={{ step, setStep }} />
+        <Reg_NextButton
+          disabled={!state.amzProfile}
+          props={{ state, step, setStep }}
         >
           Next
-        </Button>
+        </Reg_NextButton>
+
       </Form>
     </>
   );
 };
 
-export default Step2;
+export default GetAmazonUrl;

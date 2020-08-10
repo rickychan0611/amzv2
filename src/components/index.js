@@ -4,6 +4,8 @@ import Loader from './Loader/Loader'
 import AllProductsCards from './AllProductsCards/AllProductsCards'
 import SideNavBar from './SideNavBar/SideNavBar'
 import SignInModal from './SignInModal/SignInModal'
+import Reg_BackButton from './Reg_BackButton/Reg_BackButton'
+import Reg_NextButton from './Reg_NextButton/Reg_NextButton'
 
 export { 
     TopBar,
@@ -11,5 +13,7 @@ export {
     Loader,
     AllProductsCards,
     SideNavBar,
-    SignInModal
+    SignInModal,
+    Reg_BackButton,
+    Reg_NextButton
 }

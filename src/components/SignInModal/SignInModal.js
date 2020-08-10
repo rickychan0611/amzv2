@@ -15,7 +15,7 @@ const SignInModal = ( {openSignInModal, setOpenSignInModal} ) => {
       <Modal open={openSignInModal} size="mini">
         <Modal.Header
           style={{
-            backgroundImage: 'linear-gradient(to top right, #9991c9, #e5c1cd)',
+            backgroundImage: 'linear-gradient(90deg, #ffe259, #ffa751, #ff518c)',
             color: "white",
             marginBottom: 15
           }}>
@@ -32,7 +32,7 @@ const SignInModal = ( {openSignInModal, setOpenSignInModal} ) => {
             <Icon name='close' /> Cancel
           </Button>
           <Button style={{
-            backgroundImage: 'linear-gradient(to top right, #7775fa, #9a99f0)',
+            backgroundImage: 'linear-gradient(to top right, #ffe259, #ffa751, #ff518c)',
             color: "white"
           }}
             onClick={() => {

@@ -36,7 +36,7 @@ const SignIn = () => {
               history.push("./register")
             }
             return true;
-          } else {
+          } else { //1st time login
             userRef.set({
               id: authResult.user.uid,
               uid: authResult.user.uid,
@@ -44,6 +44,7 @@ const SignIn = () => {
               photoURL: authResult.user.photoURL + "?type=large",
               email: authResult.user.email,
               emailVerified: authResult.user.emailVerified,
+              registered: false
             });
             return true;
           }
